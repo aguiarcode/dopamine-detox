@@ -11,6 +11,7 @@
     "build:firefox": "wxt build --browser firefox"
   },
   "dependencies": {
+    "@wxt-dev/storage": "^1.2.8",
     "wxt": "^0.20.20"
   }
 }

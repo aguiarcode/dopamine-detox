@@ -1,3 +1,12 @@
+import { siteConfig } from "@/lib/storage";
+import { applyRules } from "@/lib/rules";
+
 export default defineBackground(() => {
-  console.log("dopaminedetox active — TikTok, YouTube Shorts, and Instagram Reels are blocked.");
+  siteConfig.getValue().then((config) => {
+    applyRules(config);
+  });
+
+  siteConfig.watch((config) => {
+    applyRules(config);
+  });
 });
