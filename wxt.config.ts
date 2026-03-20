@@ -7,5 +7,10 @@ export default defineConfig({
     description: "Block TikTok, YouTube Shorts, and Instagram Reels",
     version: "0.1.0",
     permissions: ["declarativeNetRequest", "storage"],
+    browser_specific_settings: {
+      gecko: {
+        id: "dopamine-detox@aguiarcode",
+      },
+    },
   },
 });
