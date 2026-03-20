@@ -2,19 +2,10 @@ import type { SiteConfig } from "./storage";
 
 type Rule = browser.declarativeNetRequest.Rule;
 
-function redirectAction(site: string): Rule["action"] {
-  return {
-    type: "redirect",
-    redirect: {
-      extensionPath: `/blocked.html?site=${site}`,
-    },
-  };
-}
-
 const TIKTOK_RULE: Rule = {
   id: 1,
   priority: 1,
-  action: redirectAction("tiktok"),
+  action: { type: "block" },
   condition: {
     requestDomains: ["tiktok.com"],
     resourceTypes: ["main_frame", "sub_frame"],
@@ -24,7 +15,7 @@ const TIKTOK_RULE: Rule = {
 const YOUTUBE_SHORTS_RULE: Rule = {
   id: 2,
   priority: 1,
-  action: redirectAction("youtubeShorts"),
+  action: { type: "block" },
   condition: {
     urlFilter: "||www.youtube.com/shorts/*",
     resourceTypes: ["main_frame", "sub_frame"],
@@ -34,7 +25,7 @@ const YOUTUBE_SHORTS_RULE: Rule = {
 const INSTAGRAM_REELS_RULE: Rule = {
   id: 3,
   priority: 1,
-  action: redirectAction("instagramReels"),
+  action: { type: "block" },
   condition: {
     urlFilter: "||www.instagram.com/reels/*",
     resourceTypes: ["main_frame", "sub_frame"],
