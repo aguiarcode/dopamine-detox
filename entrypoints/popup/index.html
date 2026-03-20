@@ -7,30 +7,38 @@
 </head>
 <body>
   <div class="container">
-    <h1>dopaminedetox</h1>
-
-    <div class="toggle-row">
-      <span class="label">TikTok</span>
-      <label class="switch">
-        <input type="checkbox" id="tiktok" />
+    <div class="header">
+      <h1>dopaminedetox</h1>
+      <label class="switch master">
+        <input type="checkbox" id="enabled" />
         <span class="slider"></span>
       </label>
     </div>
 
-    <div class="toggle-row">
-      <span class="label">YouTube Shorts</span>
-      <label class="switch">
-        <input type="checkbox" id="youtubeShorts" />
-        <span class="slider"></span>
-      </label>
-    </div>
+    <div class="sites" id="sites">
+      <div class="toggle-row">
+        <span class="label">TikTok</span>
+        <label class="switch">
+          <input type="checkbox" id="tiktok" />
+          <span class="slider"></span>
+        </label>
+      </div>
 
-    <div class="toggle-row">
-      <span class="label">Instagram Reels</span>
-      <label class="switch">
-        <input type="checkbox" id="instagramReels" />
-        <span class="slider"></span>
-      </label>
+      <div class="toggle-row">
+        <span class="label">YouTube Shorts</span>
+        <label class="switch">
+          <input type="checkbox" id="youtubeShorts" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <span class="label">Instagram Reels</span>
+        <label class="switch">
+          <input type="checkbox" id="instagramReels" />
+          <span class="slider"></span>
+        </label>
+      </div>
     </div>
 
     <p class="version" id="version"></p>

@@ -15,11 +15,26 @@ body {
   padding: 20px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
 h1 {
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 16px;
   color: #fff;
+}
+
+.sites {
+  transition: opacity 0.2s;
+}
+
+.sites.disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .toggle-row {
@@ -43,6 +58,11 @@ h1 {
   display: inline-block;
   width: 40px;
   height: 22px;
+}
+
+.switch.master {
+  width: 44px;
+  height: 24px;
 }
 
 .switch input {
@@ -72,13 +92,26 @@ h1 {
   transition: transform 0.2s, background 0.2s;
 }
 
+.master .slider::before {
+  width: 18px;
+  height: 18px;
+}
+
 .switch input:checked + .slider {
   background: #d94040;
+}
+
+.master input:checked + .slider {
+  background: #5a4690;
 }
 
 .switch input:checked + .slider::before {
   transform: translateX(18px);
   background: #fff;
+}
+
+.master input:checked + .slider::before {
+  transform: translateX(20px);
 }
 
 .version {

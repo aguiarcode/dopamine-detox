@@ -1,0 +1,73 @@
+export function renderBlockedPage(siteName: string): void {
+  document.documentElement.innerHTML = `
+<head>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #08090d;
+      color: #c8c8d0;
+      font-family: system-ui, -apple-system, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 24px;
+    }
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #3b3464, #1a1430);
+      box-shadow: 0 0 60px rgba(90,70,160,0.25), 0 0 120px rgba(90,70,160,0.1);
+      animation: breathe 6s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 60px rgba(90,70,160,0.25), 0 0 120px rgba(90,70,160,0.1);
+      }
+      50% {
+        transform: scale(1.35);
+        box-shadow: 0 0 80px rgba(90,70,160,0.4), 0 0 160px rgba(90,70,160,0.15);
+      }
+    }
+    .breathe-text {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #7a6faa;
+      animation: fade-text 6s ease-in-out infinite;
+    }
+    @keyframes fade-text {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    .site-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #5a4690;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+    .message {
+      font-size: 0.8rem;
+      color: #44425a;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="circle"></div>
+    <p class="breathe-text">breathe</p>
+    <p class="site-name">${siteName}</p>
+    <p class="message">This page is blocked by dopaminedetox.</p>
+  </div>
+</body>`;
+}

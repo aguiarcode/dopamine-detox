@@ -1,12 +1,14 @@
 import { storage } from "@wxt-dev/storage";
 
 export interface SiteConfig {
+  enabled: boolean;
   tiktok: boolean;
   youtubeShorts: boolean;
   instagramReels: boolean;
 }
 
 const DEFAULTS: SiteConfig = {
+  enabled: true,
   tiktok: true,
   youtubeShorts: true,
   instagramReels: true,
