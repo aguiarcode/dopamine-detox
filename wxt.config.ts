@@ -13,4 +13,16 @@ export default defineConfig({
       },
     },
   },
+  hooks: {
+    "build:manifestGenerated": (_wxt, manifest) => {
+      const gecko = (manifest as any).browser_specific_settings?.gecko;
+      if (gecko) {
+        gecko.data_collection_permissions = {
+          private_browsing: "neither",
+          data_collection: "neither",
+          required: ["none"],
+        };
+      }
+    },
+  },
 });

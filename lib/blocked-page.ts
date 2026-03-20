@@ -1,7 +1,6 @@
 export function renderBlockedPage(siteName: string): void {
-  document.documentElement.innerHTML = `
-<head>
-  <style>
+  const style = document.createElement("style");
+  style.textContent = `
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: #08090d;
@@ -60,14 +59,28 @@ export function renderBlockedPage(siteName: string): void {
       color: #44425a;
       font-weight: 300;
     }
-  </style>
-</head>
-<body>
-  <div class="scene">
-    <div class="circle"></div>
-    <p class="breathe-text">breathe</p>
-    <p class="site-name">${siteName}</p>
-    <p class="message">This page is blocked by dopaminedetox.</p>
-  </div>
-</body>`;
+  `;
+
+  const scene = document.createElement("div");
+  scene.className = "scene";
+
+  const circle = document.createElement("div");
+  circle.className = "circle";
+
+  const breatheText = document.createElement("p");
+  breatheText.className = "breathe-text";
+  breatheText.textContent = "breathe";
+
+  const siteNameEl = document.createElement("p");
+  siteNameEl.className = "site-name";
+  siteNameEl.textContent = siteName;
+
+  const message = document.createElement("p");
+  message.className = "message";
+  message.textContent = "This page is blocked by dopaminedetox.";
+
+  scene.append(circle, breatheText, siteNameEl, message);
+
+  document.head.replaceChildren(style);
+  document.body.replaceChildren(scene);
 }
