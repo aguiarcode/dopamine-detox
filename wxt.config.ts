@@ -3,7 +3,7 @@ import { defineConfig } from "wxt";
 export default defineConfig({
   manifestVersion: 3,
   manifest: {
-    name: "dopaminedetox",
+    name: "Dopamine Detox",
     description: "Block TikTok, YouTube Shorts, and Instagram Reels",
     version: "0.1.0",
     permissions: ["declarativeNetRequest", "storage"],
