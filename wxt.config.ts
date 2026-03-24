@@ -5,7 +5,7 @@ export default defineConfig({
     manifest: {
         name: "Dopamine Detox",
         description: "Block TikTok, YouTube Shorts, and Instagram Reels",
-        version: "0.1.2",
+        version: "0.1.3",
         permissions: ["declarativeNetRequest", "storage"],
         browser_specific_settings: {
             gecko: {
