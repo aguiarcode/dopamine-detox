@@ -16,17 +16,6 @@ This extension makes you stop. No timers. No "are you sure?" prompts. No daily l
 
 [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/dopaminedetox/) 
 
-### From Source
-
-```
-git clone https://github.com/aguiarcode/dopamine-detox.git
-cd dopamine-detox
-npm install
-npm run build:firefox    # or: npm run build (Chrome)
-```
-
-Load `.output/firefox-mv3/` from `about:debugging#/runtime/this-firefox` or `.output/chrome-mv3/` from `chrome://extensions` in developer mode.
-
 ## License
 
 MIT
