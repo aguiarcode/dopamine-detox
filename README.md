@@ -19,3 +19,9 @@ This extension makes you stop. No timers. No "are you sure?" prompts. No daily l
 ## License
 
 MIT
+
+
+
+
+
+new update breaks the otimized idea throughout the all extension. but stil works - TODO 
